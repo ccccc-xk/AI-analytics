@@ -34,7 +34,7 @@ const StatCard = ({
     background: '#fff', borderRadius: 14, padding: '22px 24px',
     border: '1px solid #e2e8f0',
     boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
-    display: 'flex', alignItems: 'center', gap: 16,
+    display: 'flex', alignItems: 'center', gap: 16, width: '100%',
     animation: `fadeInUp 0.4s ease-out ${delay}ms both`,
     transition: 'box-shadow 0.25s, transform 0.25s',
   }}

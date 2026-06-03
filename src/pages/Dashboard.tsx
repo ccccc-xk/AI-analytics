@@ -43,6 +43,7 @@ const StatCard = ({
       display: 'flex',
       alignItems: 'center',
       gap: 16,
+      width: '100%',
       animation: `fadeInUp 0.4s ease-out ${delay}ms both`,
       transition: 'box-shadow 0.25s, transform 0.25s',
     }}
