@@ -34,7 +34,7 @@ const AppLayout = () => {
         {
           key: '/dashboard',
           icon: <DashboardOutlined />,
-          label: '仪表�?,
+          label: '仪表盘',
         },
         {
           key: '/projects',
@@ -76,7 +76,7 @@ const AppLayout = () => {
     {
       key: 'logout',
       icon: <LogoutOutlined />,
-      label: '退出登�?,
+      label: '退出登录',
     },
   ]
 
@@ -143,7 +143,7 @@ const AppLayout = () => {
               whiteSpace: 'nowrap',
               overflow: 'hidden',
             }}>
-              AI ���ݷ���ƽ̨
+              AI 数据分析平台
             </Text>
           )}
         </div>
