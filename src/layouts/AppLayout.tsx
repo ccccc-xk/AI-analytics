@@ -34,7 +34,7 @@ const AppLayout = () => {
         {
           key: '/dashboard',
           icon: <DashboardOutlined />,
-          label: 'ä»ªè¡¨ç›˜',
+          label: 'ä»ªè¡¨ç›?,
         },
         {
           key: '/projects',
@@ -76,7 +76,7 @@ const AppLayout = () => {
     {
       key: 'logout',
       icon: <LogoutOutlined />,
-      label: 'é€€å‡ºç™»å½•',
+      label: 'é€€å‡ºç™»å½?,
     },
   ]
 
@@ -143,7 +143,7 @@ const AppLayout = () => {
               whiteSpace: 'nowrap',
               overflow: 'hidden',
             }}>
-              AI Analytics
+              AI Êý¾Ý·ÖÎöÆ½Ì¨
             </Text>
           )}
         </div>

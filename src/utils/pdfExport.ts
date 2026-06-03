@@ -1,4 +1,4 @@
-import jsPDF from 'jspdf'
+﻿import jsPDF from 'jspdf'
 import html2canvas from 'html2canvas'
 import type { Dataset, DataRow } from '@/types'
 
@@ -92,7 +92,7 @@ function createReportHTML(
   </div>
 
   <div class="footer">
-    AI Analytics Platform · 导出时间：${new Date().toLocaleString('zh-CN')}
+    AI 数据分析平台 · 导出时间：${new Date().toLocaleString('zh-CN')}
   </div>
 </body>
 </html>`
