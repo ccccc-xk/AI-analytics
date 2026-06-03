@@ -183,36 +183,33 @@ const Dashboard = () => {
       </div>
 
       {/* Stat cards - real data */}
-      <div style={{ marginBottom: 28 }}>
-        <Row gutter={16}>
-          <Col xs={24} sm={8}>
-            <StatCard
-              icon={<ProjectOutlined />}
-              label="项目总数"
-              value={projects.length}
-              gradient="linear-gradient(135deg, #3b82f6, #6366f1)"
-              delay={0}
-            />
-          </Col>
-          <Col xs={24} sm={8} style={{ marginTop: 12 }}>
-            <StatCard
-              icon={<DatabaseOutlined />}
-              label="数据集"
-              value={datasetCount}
-              gradient="linear-gradient(135deg, #10b981, #06b6d4)"
-              delay={80}
-            />
-          </Col>
-          <Col xs={24} sm={8} style={{ marginTop: 12 }}>
-            <StatCard
-              icon={<BarChartOutlined />}
-              label="数据总量"
-              value={totalRows}
-              gradient="linear-gradient(135deg, #f59e0b, #ef4444)"
-              delay={160}
-            />
-          </Col>
-        </Row>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3, 1fr)',
+        gap: 16,
+        marginBottom: 28,
+      }}>
+        <StatCard
+          icon={<ProjectOutlined />}
+          label="项目总数"
+          value={projects.length}
+          gradient="linear-gradient(135deg, #3b82f6, #6366f1)"
+          delay={0}
+        />
+        <StatCard
+          icon={<DatabaseOutlined />}
+          label="数据集"
+          value={datasetCount}
+          gradient="linear-gradient(135deg, #10b981, #06b6d4)"
+          delay={80}
+        />
+        <StatCard
+          icon={<BarChartOutlined />}
+          label="数据总量"
+          value={totalRows}
+          gradient="linear-gradient(135deg, #f59e0b, #ef4444)"
+          delay={160}
+        />
       </div>
 
       <Row gutter={24}>

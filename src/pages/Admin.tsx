@@ -1,5 +1,5 @@
 ﻿import { useEffect, useState } from 'react'
-import { Typography, Table, Card, Row, Col, Tag, Button, message, Popconfirm, Modal } from 'antd'
+import { Typography, Table, Card, Tag, Button, message, Popconfirm, Modal } from 'antd'
 import {
   ProjectOutlined,
   DatabaseOutlined,
@@ -148,24 +148,21 @@ const Admin = () => {
       </div>
 
       {/* Stats */}
-      <Row gutter={16} style={{ marginBottom: 28 }}>
-        <Col xs={24} sm={12} lg={6}>
-          <StatCard icon={<ProjectOutlined />} label="项目数" value={projects.length}
-            gradient="linear-gradient(135deg, #3b82f6, #6366f1)" delay={0} />
-        </Col>
-        <Col xs={24} sm={12} lg={6} style={{ marginTop: 12 }}>
-          <StatCard icon={<DatabaseOutlined />} label="数据集" value={allDatasets.length}
-            gradient="linear-gradient(135deg, #10b981, #06b6d4)" delay={80} />
-        </Col>
-        <Col xs={24} sm={12} lg={6} style={{ marginTop: 12 }}>
-          <StatCard icon={<FileTextOutlined />} label="数据总量" value={totalRows.toLocaleString()}
-            gradient="linear-gradient(135deg, #f59e0b, #ef4444)" delay={160} />
-        </Col>
-        <Col xs={24} sm={12} lg={6} style={{ marginTop: 12 }}>
-          <StatCard icon={<ShareAltOutlined />} label="分享链接" value={allShares.length}
-            gradient="linear-gradient(135deg, #8b5cf6, #ec4899)" delay={240} />
-        </Col>
-      </Row>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, 1fr)',
+        gap: 16,
+        marginBottom: 28,
+      }}>
+        <StatCard icon={<ProjectOutlined />} label="项目数" value={projects.length}
+          gradient="linear-gradient(135deg, #3b82f6, #6366f1)" delay={0} />
+        <StatCard icon={<DatabaseOutlined />} label="数据集" value={allDatasets.length}
+          gradient="linear-gradient(135deg, #10b981, #06b6d4)" delay={80} />
+        <StatCard icon={<FileTextOutlined />} label="数据总量" value={totalRows.toLocaleString()}
+          gradient="linear-gradient(135deg, #f59e0b, #ef4444)" delay={160} />
+        <StatCard icon={<ShareAltOutlined />} label="分享链接" value={allShares.length}
+          gradient="linear-gradient(135deg, #8b5cf6, #ec4899)" delay={240} />
+      </div>
 
       {/* Share management */}
       <Card style={{
