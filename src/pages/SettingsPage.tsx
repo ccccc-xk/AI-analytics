@@ -70,12 +70,28 @@ const SettingsPage = () => {
     }
   }, [user])
 
+
+  // Ensure we have a valid session before calling updateUser
+  const ensureSession = async () => {
+    const { data: { session } } = await supabase.auth.getSession()
+    if (!session) {
+      // Try to refresh
+      const { data, error } = await supabase.auth.refreshSession()
+      if (error || !data.session) {
+        message.error('会话已过期，请退出后重新登录')
+        return false
+      }
+    }
+    return true
+  }
+
   const handleChangePassword = async () => {
     try {
       const values = await passwordForm.validateFields()
       setPasswordLoading(true)
+      if (!(await ensureSession())) { setPasswordLoading(false); return }
       const { error } = await supabase.auth.updateUser({ password: values.newPassword })
-      if (error) message.error('密码修改失败：' + error.message)
+      if (error) message.error(error.message.includes('session') ? '会话已过期，请退出后重新登录' : '密码修改失败：' + error.message)
       else { message.success('密码修改成功'); setPasswordModalOpen(false); passwordForm.resetFields() }
     } catch { /* validation */ }
     finally { setPasswordLoading(false) }
@@ -85,11 +101,12 @@ const SettingsPage = () => {
     try {
       const values = await profileForm.validateFields()
       setProfileLoading(true)
+      if (!(await ensureSession())) { setProfileLoading(false); return }
       const { error } = await supabase.auth.updateUser({
         data: { display_name: values.displayName, avatar_url: avatarUrl },
       })
       if (error) {
-        message.error('资料更新失败：' + error.message)
+        message.error(error.message.includes('session') ? '会话已过期，请退出后重新登录' : '资料更新失败：' + error.message)
       } else {
         await refreshUser()
         message.success('个人资料已更新')
@@ -101,13 +118,14 @@ const SettingsPage = () => {
 
   const handleAvatarUpload = async (file: File) => {
     setAvatarLoading(true)
+    if (!(await ensureSession())) { setAvatarLoading(false); return false }
     try {
       const base64 = await resizeImage(file)
       const { error } = await supabase.auth.updateUser({
         data: { display_name: displayName, avatar_url: base64 },
       })
       if (error) {
-        message.error('头像更新失败：' + error.message)
+        message.error(error.message.includes('session') ? '会话已过期，请退出后重新登录' : '头像更新失败：' + error.message)
       } else {
         await refreshUser()
         message.success('头像已更新')
