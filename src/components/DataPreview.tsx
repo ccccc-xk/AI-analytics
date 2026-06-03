@@ -20,7 +20,7 @@ const DataPreview = ({ dataset, dataRows, loading, projectName, onBack, onRefres
   const handleExportPdf = async () => {
     try {
       message.loading({ content: '正在生成 PDF...', key: 'pdf' })
-      await exportDataReport(projectName || 'AI 数据可视化平台', dataset, dataRows)
+      await exportDataReport(projectName || 'AI 数据分析工作台', dataset, dataRows)
       message.success({ content: 'PDF 导出成功', key: 'pdf' })
     } catch {
       message.error({ content: 'PDF 导出失败', key: 'pdf' })

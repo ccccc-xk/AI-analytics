@@ -92,7 +92,7 @@ function createReportHTML(
   </div>
 
   <div class="footer">
-    AI 数据可视化平台 · 导出时间：${new Date().toLocaleString('zh-CN')}
+    AI 数据分析工作台 · 导出时间：${new Date().toLocaleString('zh-CN')}
   </div>
 </body>
 </html>`
