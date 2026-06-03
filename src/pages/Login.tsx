@@ -92,7 +92,7 @@ const Login = () => {
             <LineChartOutlined style={{ fontSize: 28, color: '#fff' }} />
           </div>
           <Title level={3} style={{ margin: 0, color: '#fff', fontWeight: 700, letterSpacing: -0.5 }}>
-            AI 数据分析平台
+            AI 数据可视化平台
           </Title>
           <Text style={{ color: 'rgba(255,255,255,0.5)', fontSize: 13, marginTop: 6 }}>
             智能数据洞察，驱动业务决策

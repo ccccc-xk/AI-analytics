@@ -49,7 +49,7 @@
 
 ## 项目经历（新增 AI-analytics 项目，原版保留）
 
-### AI 数据分析平台（独立全栈开发） 2026/04 - 2026/06
+### AI 数据可视化平台（独立全栈开发） 2026/04 - 2026/06
 
 https://ai-analytics-opal.vercel.app
 https://ai-analytics-2d8.pages.dev

@@ -143,7 +143,7 @@ const AppLayout = () => {
               whiteSpace: 'nowrap',
               overflow: 'hidden',
             }}>
-              AI 数据分析平台
+              AI 数据可视化平台
             </Text>
           )}
         </div>
