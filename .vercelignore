@@ -1,0 +1,11 @@
+node_modules
+.git
+.env.local
+*.png
+*.jpg
+*.csv
+*.xls
+docs
+dist
+debug-*.cjs
+test-*.cjs

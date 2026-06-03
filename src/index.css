@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary palette - Indigo to Violet gradient */
+  --color-primary: #6366f1;
+  --color-primary-light: #818cf8;
+  --color-primary-dark: #4f46e5;
+  --color-primary-bg: #eef2ff;
+
+  /* Accent */
+  --color-accent: #06b6d4;
+  --color-accent-light: #22d3ee;
+
+  /* Semantic */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-sidebar: linear-gradient(180deg, #1e1b4b 0%, #312e81 50%, #3730a3 100%);
+  --gradient-header: linear-gradient(135deg, #f0f4ff 0%, #e8ecf8 100%);
+  --gradient-welcome: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+  --gradient-card-blue: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+  --gradient-card-emerald: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+  --gradient-card-amber: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 10px 40px rgba(99, 102, 241, 0.12), 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Spacing */
+  --page-padding: 28px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans SC', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #1e293b;
+  background: #f1f5f9;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Ant Design overrides */
+.ant-layout {
+  background: #f1f5f9 !important;
+}
+
+.ant-layout-sider {
+  background: var(--gradient-sidebar) !important;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.ant-layout-sider .ant-menu-dark {
+  background: transparent !important;
+}
+
+.ant-layout-sider .ant-menu-dark .ant-menu-item {
+  border-radius: var(--radius-sm);
+  margin: 2px 8px;
+  transition: all var(--transition-fast);
+}
+
+.ant-layout-sider .ant-menu-dark .ant-menu-item:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+.ant-layout-sider .ant-menu-dark .ant-menu-item-selected {
+  background: rgba(99, 102, 241, 0.4) !important;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.ant-layout-header {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.ant-card {
+  border-radius: var(--radius-md) !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: var(--shadow-card) !important;
+  transition: all var(--transition-normal) !important;
+  overflow: hidden;
+}
+
+.ant-card:hover {
+  box-shadow: var(--shadow-card-hover) !important;
+  transform: translateY(-2px);
+  border-color: #c7d2fe !important;
+}
+
+.ant-card .ant-card-actions {
+  background: #fafbfc;
+  border-top: 1px solid #f1f5f9;
+}
+
+.ant-btn-primary {
+  background: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 2px 4px rgba(99, 102, 241, 0.3);
+  transition: all var(--transition-fast);
+}
+
+.ant-btn-primary:hover {
+  background: var(--color-primary-dark) !important;
+  border-color: var(--color-primary-dark) !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  transform: translateY(-1px);
+}
+
+.ant-input:focus,
+.ant-input-affix-wrapper:focus,
+.ant-input-affix-wrapper-focused {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
+}
+
+.ant-statistic {
+  text-align: center;
+}
+
+.ant-statistic-title {
+  font-size: 13px !important;
+  color: #64748b !important;
+  font-weight: 500;
+}
+
+.ant-statistic-content {
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+}
+
+.ant-tag {
+  border-radius: var(--radius-sm) !important;
+  font-weight: 500;
+  border: none !important;
+}
+
+.ant-breadcrumb {
+  font-size: 13px;
+}
+
+.ant-empty-description {
+  color: #94a3b8 !important;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out both;
+}
+
+/* Utility: stagger children animation */
+.stagger-children > * {
+  animation: fadeInUp 0.4s ease-out both;
+}
+.stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 60ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 120ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 180ms; }
+.stagger-children > *:nth-child(5) { animation-delay: 240ms; }
+.stagger-children > *:nth-child(6) { animation-delay: 300ms; }
+.stagger-children > *:nth-child(7) { animation-delay: 360ms; }
+.stagger-children > *:nth-child(8) { animation-delay: 420ms; }
